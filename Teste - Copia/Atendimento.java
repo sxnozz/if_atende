@@ -4,7 +4,7 @@ public class Atendimento {
     private long id_atendimento;
     private Comentario comentario;
     private Date data_hora;
-    private Materia materia;
+    private String materia;
     private String  diaSemana;
     
 

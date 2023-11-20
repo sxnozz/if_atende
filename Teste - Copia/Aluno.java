@@ -16,6 +16,7 @@ public class Aluno {
         this.periodo = " ";
         this.idade = " ";
         this.nome = " ";
+        this.curso = " ";
 
         this.mat_aluno = "20XXSS.CC_" + this.id_aluno;
     }
@@ -80,9 +81,19 @@ public class Aluno {
         this.nome = nome;
     }
 
-    @Override
-    public String toString(){
-      return "ID:" + id_aluno + " Nome:" + nome + " idade:" + idade + " matricula:" + mat_aluno + " email: " + email;
+    public String getCurso() {
+        return curso;
+    }
+    
+    public void setCurso(String curso) {
+        this.curso = curso;
     }
 
-}
+    @Override
+    public String toString() {
+        return "Aluno [id_aluno=" + id_aluno + ", curso=" + curso + ", mat_aluno=" + mat_aluno + ", email=" + email
+                + ", idade=" + idade + ", nome=" + nome + "]";
+    }
+
+    
+    }
