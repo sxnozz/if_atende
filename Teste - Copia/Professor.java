@@ -1,4 +1,4 @@
-package Model.java;
+
 
 public class Professor extends Aluno {
 

@@ -2,7 +2,7 @@ import java.util.Date;
 
 public class Atendimento {
     private long id_atendimento;
-    private String comentario;
+    private Comentario comentario;
     private Date data_hora;
     private Materia materia;
     private String  diaSemana;
@@ -14,22 +14,21 @@ public class Atendimento {
 
 
     public Atendimento(){
-        this.comentario = " ";
         this.id_atendimento = 0;
         this.data_hora = new Date();
     }
 
-    public Atendimento(long id_atendimento,String comentario,Date data_hora){
+    public Atendimento(long id_atendimento,Comentario comentario,Date data_hora){
         this.id_atendimento = id_atendimento;
         this.comentario = comentario;
         this.data_hora = data_hora;
     }
 
-    public String getComentario() {
+    public Comentario getComentario() {
         return comentario;
     }
 
-    public void setComentario(String comentario) {
+    public void setComentario(Comentario comentario) {
         this.comentario = comentario;
     }
 
@@ -49,11 +48,14 @@ public class Atendimento {
         this.id_atendimento = id_atendimento;
     }
 
-
-
-     @Override
-    public String toString(){
-        return "HorarioAtendimento [diaSemana="+diaSemana+"horario"+ data_hora+"]";
+    @Override
+    public String toString() {
+        return "Atendimento [id_atendimento=" + id_atendimento + ", comentario=" + comentario + ", data_hora="
+                + data_hora + ", materia=" + materia + ", diaSemana=" + diaSemana + "]";
     }
+
+
+
+    
 
 }
