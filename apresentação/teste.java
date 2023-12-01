@@ -18,9 +18,9 @@ import Persistencia.ComentarioDAO;
 public class teste {
     public static void main(String[] args) { 
    
-      ProfessorDAO professorDAO = new ProfessorDAO();
+      
       AlunoDAO alunoDAO = new AlunoDAO();
-      ComentarioDAO comentarioDAO = new ComentarioDAO();
+     
 
     //Cria um aluno
     //Aluno aluno = new Aluno("2022", "tds","123","jongas@gmail","manha","16","joao pedro",2,null, null);
@@ -29,7 +29,7 @@ public class teste {
         
         
   //editar 
-  //Aluno aluno = new Aluno("2050","lulamolusco@gmail.com", "gremio", "pirocona", "2", "bleach", "16anos",1,null, null);
+  //Aluno aluno = new Aluno("2050","lulamolusco@gmail.com", "gremio", "inter", "2", "guaiba", "16anos",1,null, null);
   //AlunoDAO alunoDAO = new AlunoDAO();
  //alunoDAO.editar(aluno);
 
@@ -54,15 +54,15 @@ public class teste {
 //PROFESSOR
 
      //Cria um professor
-    //Professor professor = new Professor("2022", "tds","123","jongas@gmail",0, null, null);
-    //ProfessorDAO professorDAO = new ProfessorDAO();
-    //professorDAO.salvar(professor);
+    // Professor professor = new Professor(0,"jorge peres", "jgperes@gmail.com","jg","jg");
+    // ProfessorDAO professorDAO = new ProfessorDAO();
+    // professorDAO.salvar(professor);
         
         
     // editar Funfando
-    //Professor professor = new Professor("1234","jonas123", "123", "jonas13@gmail.com", 1 , null, (long) 1);
-    //ProfessorDAO professorDAO = new ProfessorDAO();
-    //professorDAO.editar(professor);
+    // Professor professor = new Professor(2,"jorge peres", "jgperes@gmail.com","jg","jg");
+    // ProfessorDAO professorDAO = new ProfessorDAO();
+    // professorDAO.editar(professor);
 
 
 
@@ -76,44 +76,81 @@ public class teste {
 
 
       //BUSCAR POR ID
-    //ProfessorDAO professorDAO = new ProfessorDAO();
-    //Professor professor = professorDAO.buscar(2);
-    //System.out.println(professor);
+    // ProfessorDAO professorDAO = new ProfessorDAO();
+    // Professor professor = professorDAO.buscar(2);
+    // System.out.println(professor);
  
  
 //Atendimento
     //Cria um Atendimento
     
-    Atendimento atendimento = new Atendimento(0, null, null, null, null);
-    AtendimentoDAO atendimentoDAO = new AtendimentoDAO();
-    Aluno aluno = alunoDAO.buscar(0);
-    Professor professor = professorDAO.buscar(0);
-    atendimentoDAO.salvar(atendimento);
+  //   Atendimento atendimento = new Atendimento();
+  //   AtendimentoDAO atendimentoDAO = new AtendimentoDAO();
+  //   Aluno aluno = alunoDAO.buscar(1);
+  //   Professor professor = professorDAO.buscar(1);
+  //   Comentario comentario = comentarioDAO.buscar(1);
+  //   atendimento.setAluno(aluno);
+  //   atendimento.setProfessor(professor);
+  //   atendimento.setComentario(comentario);
+  //  System.out.println(professor.toString());
+  //  atendimentoDAO.salvar(atendimento);
     
    
-    // editar Funfando
-    //Atendimento atendimento = new Atendimento("1234","jonas123", "123", "jonas13@gmail.com", 1 , null, (long) 1);
-    //AtendimentoDAO atendimentoDAO = new AtendimentoDAO();
-    //atendimentoDAO.editar(atendimento);
+    //editar atendimento
+    // Atendimento atendimento = new Atendimento(2, "12:30", "matematica");
+    // AtendimentoDAO atendimentoDAO = new AtendimentoDAO();
+    // Aluno aluno = alunoDAO.buscar(1);
+    // Professor professor = professorDAO.buscar(1);
+    // Comentario comentario = comentarioDAO.buscar(1);
+    // atendimento.setAluno(aluno);
+    // atendimento.setComentario(comentario);
+    // atendimento.setProfessor(professor);
+    // atendimentoDAO.editar(atendimento);
+
+
 
 
 
     //Excluir 
    
-    //AtendimentoDAO atendimentodao= new AtendimentoDAO();
-    //atendimentodao.excluir(1);
+    // AtendimentoDAO atendimentoDAO= new AtendimentoDAO();
+    // atendimentoDAO.excluir(2);
 
     
 
 
 
       //BUSCAR POR ID
-    //AtendimentoDAO atendimentoDAO = new AtendimentoDAO();
-    //Atendimento atendimento = atendimentoDAO.buscar(3);
-    //System.out.println(atendimento);
+    //  AtendimentoDAO atendimentoDAO = new AtendimentoDAO();
+    //  Atendimento atendimento = atendimentoDAO.buscar(3);
+    //  System.out.println(atendimento.getIdAtendimento());
  
  
+    // Comentario
 
+ //Cria um aluno
+    //  Comentario comentario = new Comentario("gremio maior do sul", "12/12",0);
+    //  ComentarioDAO comentarioDAO = new ComentarioDAO();
+    //  comentarioDAO.salvar(comentario);
+   
+  //editar 
+  //    Comentario c = new Comentario(2 ,"12/12" , "texto") ;
+  //    ComentarioDAO cDAO = new ComentarioDAO();
+  //  cDAO.editar(c);
+
+    //Excluir 
+   
+    // ComentarioDAO comentarioDAO= new ComentarioDAO();
+    // comentarioDAO.excluir(2);
+
+    
+
+
+
+      //BUSCAR POR ID
+    ComentarioDAO comentarioDAO = new ComentarioDAO();
+    Comentario comentario = comentarioDAO.buscar(1);
+    System.out.println(comentario);
 
 
 

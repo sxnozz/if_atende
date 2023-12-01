@@ -18,7 +18,7 @@ public class ComentarioDAO {
             this.conexao.abrirConexao();
             String sql = "INSERT INTO Comentario VALUES(null, ?, ?)";
             PreparedStatement statement = this.conexao.getConexao().prepareStatement(sql);
-            statement.setDate(1, new Date(comentario.getData().getTime()));  
+            statement.setString(1, comentario.getData());  
             statement.setString(2, comentario.getTexto());
             statement.executeUpdate();
         } catch (SQLException e) {
@@ -31,9 +31,9 @@ public class ComentarioDAO {
     public void editar(Comentario comentario) {
         try {
             this.conexao.abrirConexao();
-            String sql = "UPDATE Comentario SET data=?, texto=? WHERE id_comentario=?";
+            String sql = "UPDATE Comentario SET data_hora=?, texto=? WHERE id_comentario=?";
             PreparedStatement statement = this.conexao.getConexao().prepareStatement(sql);
-            statement.setDate(2, new Date(comentario.getData().getTime()));  
+            statement.setString(2, comentario.getData());  
             statement.setString(1, comentario.getTexto());
             statement.setLong(3, comentario.getIdComentario());
             statement.executeUpdate();
@@ -68,7 +68,13 @@ public class ComentarioDAO {
             ResultSet rs = statement.executeQuery();
 
             if (rs.next()) {
-                comentario = new Comentario(rs.getString("texto"), rs.getDate("data"), idComentario, null);
+               comentario  = new Comentario(
+
+               idComentario, "data", "texto"
+                
+              
+                );
+
             }
 
         } catch (SQLException e) {

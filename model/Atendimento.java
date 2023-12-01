@@ -12,11 +12,19 @@ public class Atendimento {
 
     
 
-
-
-    public Atendimento(Long idAtendimento,String dataHora ,String materia){
+    public Atendimento() {
         this.idAtendimento = 0;
         this.dataHora = " ";
+        this.materia = " ";
+        this.comentario = new Comentario();
+        this.aluno = new Aluno();
+        this.professor = new Professor();
+    }
+
+    public Atendimento(long idAtendimento,String dataHora ,String materia){
+        this.idAtendimento = idAtendimento;
+        this.dataHora = dataHora;
+        this.materia = materia;
         this.aluno = new Aluno();
         this.professor = new Professor();
         this.comentario = new Comentario();

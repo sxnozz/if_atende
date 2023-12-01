@@ -5,37 +5,30 @@ import java.util.List;
 
 public class Comentario {
 
-    private Long idComentario;
-    private Date data;
+    private long idComentario;
+    private String data;
     private String texto;
-    private List <Comentario> listaComentario;
 
 
     public Comentario() {
-        this.data = new Date();
+        this.idComentario = 0;
+        this.data = " ";
         this.texto =" ";
-        this.listaComentario = new ArrayList<Comentario>() {
-
-    };
     }
 
-    public Comentario(String texto, Date data, long idComentario, List <Comentario> listaComentario) {
-        this.texto = texto;
-        this.data = data;
+    public Comentario(long idComentario,String data,String texto  ) {
         this.idComentario = idComentario;
-        this.listaComentario = listaComentario;
-    }
-    
-    
-    public Comentario(String string, String string2, String string3, String string4, int i, Object object,
-            Object object2) {
+        this.data = data;
+        this.texto = texto;
+        
+        
     }
 
-    public Date getData() {
+    public String getData() {
         return data;
     }
     
-    public void setData(Date data) {
+    public void setData(String data) {
         this.data = data;
     }
     
@@ -55,17 +48,9 @@ public class Comentario {
         this.texto = texto;
     }
 
-    public List<Comentario> getListaComentario() {
-        return listaComentario;
-    }
-    public void setListaComentario(List<Comentario> listaComentario) {
-        this.listaComentario = listaComentario;
-    }
-
     @Override
     public String toString() {
-        return "Comentario [idComentario=" + idComentario + ", data=" + data + ", texto=" + texto + ", listaComentario="
-                + listaComentario + "]";
+        return "Comentario [idComentario=" + idComentario + ", data=" + data + ", texto=" + texto + "]";
     }
 
 

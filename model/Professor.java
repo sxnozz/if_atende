@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Professor {
 
-   private Long idProfessor;
+   private long idProfessor;
    private String senha;
    private String nome;
    private String matProfessor;
@@ -14,27 +14,29 @@ public class Professor {
 
 
    public Professor(){
-
-    this.idProfessor = (long) 0 ;
-    this.senha = " ";
+    this.idProfessor = 0;
     this.nome = " ";
-    this.matProfessor = " ";
     this.emailProfessor = " ";
-    this.listaAtendimento = new ArrayList<Atendimento>() {
-            
-        };
+    
+    this.matProfessor = " ";
+    this.senha = " ";
+    this.listaAtendimento = new ArrayList<Atendimento>();
     
    }
 
 
-    public Professor(String senha,String nome,String matProfessor , String emailProfessor,int i, List <Atendimento> listaAtendimento, Long idProfessor){
+    
+    public Professor(long idProfessor, String nome,String emailProfessor, String senha,String matProfessor ){
 
-        this.senha = senha;
-        this.nome = nome;
-        this.matProfessor = matProfessor;
-        this.emailProfessor = emailProfessor;
         this.idProfessor = idProfessor;
-        this.listaAtendimento = listaAtendimento;
+        this.nome = nome;
+        this.senha = senha;
+        this.emailProfessor = emailProfessor;
+        this.matProfessor = matProfessor;
+         this.listaAtendimento = new ArrayList<>();
+        this.listaAtendimento.addAll(listaAtendimento);
+        
+       
         
     }
 

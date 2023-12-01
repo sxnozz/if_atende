@@ -15,13 +15,13 @@ public class ProfessorDAO {
     public void salvar(Professor professor) {
         try {
             this.conexao.abrirConexao();
-            String sql = "INSERT INTO Professor VALUES(null, ?, ?, ?,?)";
+            String sql = "INSERT INTO Professor VALUES(null, ?, ?, ?, ?)";
             PreparedStatement statement = this.conexao.getConexao().prepareStatement(sql);
            
-            statement.setString(2, professor.getMatProfessor());
+            statement.setString(1, professor.getMatProfessor());
+            statement.setString(2, professor.getNome());
             statement.setString(3, professor.getSenha());
             statement.setString(4, professor.getemailProfessor());
-            statement.setString(1, professor.getNome());
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -64,7 +64,6 @@ public class ProfessorDAO {
     }
 
     public Professor buscar(long idProfessor) {
-        Professor professor = null;
         try {
             this.conexao.abrirConexao();
             String sql = "SELECT * FROM Professor WHERE id_professor=?";
@@ -73,14 +72,23 @@ public class ProfessorDAO {
             ResultSet rs = statement.executeQuery();
 
             if (rs.next()) {
+                Professor professor = new Professor();
+                professor.setidProfessor(rs.getLong("id_professor"));
+                professor.setNome(rs.getString("nome"));
+                professor.setMatProfessor(rs.getString("mat_professor"));
+                professor.setSenha(rs.getString("senha"));
+                professor.setemailProfessor(rs.getString("email"));
+                return professor;
             }
-
+            else {
+                return null;
+            }
         } catch (SQLException e) {
             e.printStackTrace();
+            return null;
         } finally {
             this.conexao.fecharConexao();
         }
-        return professor;
     }
 }
 

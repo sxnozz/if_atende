@@ -79,20 +79,27 @@ public class AlunoDAO {
             this.conexao.abrirConexao();
             String sql = "SELECT * FROM Aluno WHERE id_aluno=?";
             PreparedStatement statement = this.conexao.getConexao().prepareStatement(sql);
+           
+           
             statement.setLong(1, idAluno);
             ResultSet rs = statement.executeQuery();
 
+        
+
             if (rs.next() == true) {
-                aluno = new Aluno(
-                    rs.getString("nome"),
-                    rs.getString("mat_aluno"),
-                    rs.getString("senha"),
-                    rs.getString("email"),
-                    rs.getString("idade"),
-                    rs.getString("curso"),
-                    rs.getString("periodo"), idAluno, null, sql
+                aluno = new Aluno();
+                    
+                  aluno.setIdAluno(rs.getLong("id_aluno"));
+                  aluno.setNome(rs.getString("nome"));
+                  aluno.setmatAluno(rs.getString("matAluno"));
+                  aluno.setSenha(rs.getString("senha"));
+                  aluno.setEmail(rs.getString("email"));
+                  aluno.setIdade(rs.getString("idade"));
+                  aluno.setCurso(rs.getString("curso"));
+                  aluno.setPeriodo(rs.getString("periodo"));
+                  aluno.setAno(rs.getString("ano"));
                    
-                );
+                
             }
 
         } catch (SQLException e) {

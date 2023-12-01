@@ -15,13 +15,13 @@ public class AtendimentoDAO {
     public void salvar(Atendimento atendimento) {
         try {
             this.conexao.abrirConexao();
-            String sql = "INSERT INTO Atendimento VALUES(null, ?, ?, ?, ?)";
+            String sql = "INSERT INTO Atendimento VALUES(null, ?, ?, ?, ?, ?)";
             PreparedStatement statement = this.conexao.getConexao().prepareStatement(sql);
-            statement.setString(1, atendimento.getDataHora());
-            statement.setString(2, atendimento.getMateria());
-            statement.setObject(3, atendimento.getAluno().getIdAluno());
-            statement.setObject(4, atendimento.getProfessor().getidProfessor());
-            statement.setObject(5, atendimento.getComentario());
+            statement.setString(1, atendimento.getMateria());
+            statement.setString(2, atendimento.getDataHora());
+            statement.setLong(3, atendimento.getAluno().getIdAluno());
+            statement.setLong(4, atendimento.getProfessor().getidProfessor());
+            statement.setLong(5, atendimento.getComentario().getIdComentario());
 
             statement.executeUpdate();
         } catch (SQLException e) {
@@ -34,13 +34,13 @@ public class AtendimentoDAO {
     public void editar(Atendimento atendimento) {
         try {
             this.conexao.abrirConexao();
-            String sql = "UPDATE Atendimento SET datahora=?, materia=?, aluno=?, professor=?, comentario=? WHERE id_atendimento=?";
+            String sql = "UPDATE Atendimento SET materia=?, horario=?,  id_aluno=?, id_professor=?, id_comentario=? WHERE id_atendimento=?";
             PreparedStatement statement = this.conexao.getConexao().prepareStatement(sql);
             statement.setString(1, atendimento.getDataHora());
             statement.setString(2, atendimento.getMateria());
-            statement.setObject(3, atendimento.getAluno());
-            statement.setObject(4, atendimento.getProfessor());
-            statement.setObject(5, atendimento.getComentario());
+            statement.setLong(3, atendimento.getAluno().getIdAluno());
+            statement.setLong(4, atendimento.getProfessor().getidProfessor());
+            statement.setLong(5, atendimento.getComentario().getIdComentario());
             statement.setLong(6, atendimento.getIdAtendimento());
 
             statement.executeUpdate();

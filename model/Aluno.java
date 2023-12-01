@@ -33,18 +33,17 @@ public class Aluno {
         this.matAluno = "20XXSS.CC_" + this.idAluno;
     }
 
-    public Aluno(String ano, String curso, String senha, String email, String periodo, String idade, String nome, long idAluno, List <Atendimento> listaAtendimento, String matAluno) {
+    public Aluno(long idAluno,String nome,String matAluno,String senha,String email, String idade, String curso, String periodo, String ano, List <Atendimento> listaAtendimento ) {
         this.idAluno = idAluno;
+        this.nome = nome;
+        this.matAluno = matAluno;
+        this.senha = senha;
         this.email = email;
-        this.ano = ano;
+        this.idade = idade;
         this.curso = curso;
         this.periodo = periodo;
-        this.senha = senha;
-        this.idade = idade;
-        this.nome = nome;
+        this.ano = ano; 
         this.listaAtendimento = listaAtendimento;
-
-        this.matAluno = ano + periodo + "SS." + curso + idAluno;
     }
 
 
